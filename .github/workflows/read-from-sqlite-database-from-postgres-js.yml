@@ -1,9 +1,9 @@
-name: Persist SQLite database to cache
+name: Read from an SQLite database from Postgres.js
 on:
   workflow_dispatch:
 jobs:
-  persist-sqlite-database-to-cache:
-    name: Persist SQLite database to cache
+  read-from-sqlite-database-from-postgres-js:
+    name: Read from an SQLite database from Postgres.js
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
