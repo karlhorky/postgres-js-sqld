@@ -5,11 +5,6 @@ jobs:
   persist-sqlite-database-to-cache:
     name: Persist SQLite database to cache
     runs-on: ubuntu-latest
-    env:
-      PGHOST: localhost
-      PGDATABASE: upleveled
-      PGUSERNAME: upleveled
-      PGPASSWORD: upleveled
     steps:
       - uses: actions/checkout@v3
       - run: |
