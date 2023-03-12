@@ -27,9 +27,6 @@ jobs:
       - name: Start database in background
         run: sqld -d chinook.db -p 127.0.0.1:5432 --http-listen-addr=127.0.0.1:8000 &
       - name: Wait for database to start
-        run: |
-          while ! nc -z localhost 5432; do
-            sleep 0.1
-          done
+        run: sleep 10
       - name: Run script
         run: pnpm start
