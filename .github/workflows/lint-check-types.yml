@@ -1,0 +1,33 @@
+name: Lint, Check types
+on: push
+
+jobs:
+  lint-check-types:
+    name: Lint, Check types
+    runs-on: ubuntu-latest
+    env:
+      PGHOST: localhost
+      PGDATABASE: demo
+      PGUSERNAME: demo
+      PGPASSWORD: demo
+    steps:
+      - uses: actions/checkout@v3
+      - run: |
+          # Add brews to the path
+          echo "/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin" >> $GITHUB_PATH
+          # Setup brew environment
+          eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+          # Install sqld https://github.com/libsql/sqld
+          brew tap libsql/sqld
+          brew install sqld-beta
+      - uses: pnpm/action-setup@v2
+        with:
+          version: '7'
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'pnpm'
+      - name: Install dependencies
+        run: pnpm install
+      - run: pnpm eslint . --max-warnings 0
+      - run: pnpm tsc
