@@ -1,9 +1,9 @@
-name: Read from an SQLite database from Postgres.js
+name: Read and write in an SQLite database from Postgres.js
 on:
   workflow_dispatch:
 jobs:
-  read-from-sqlite-database-from-postgres-js:
-    name: Read from an SQLite database from Postgres.js
+  read-write-sqlite-database-from-postgres-js:
+    name: Read and write in an SQLite database from Postgres.js
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
