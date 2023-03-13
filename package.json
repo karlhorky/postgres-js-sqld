@@ -1,7 +1,7 @@
 {
   "name": "postgres-js-sqld",
   "version": "1.0.0",
-  "description": "Read and write from an SQLite database from Postgres.js, via sqld",
+  "description": "Read and write in an SQLite database from Postgres.js, via sqld",
   "license": "MIT",
   "author": "Karl Horky",
   "type": "module",
