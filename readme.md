@@ -1,3 +1,3 @@
 # `postgres-js-sqld`
 
-> Read from an SQLite database from Postgres.js, via sqld
+> Read and write from an SQLite database from Postgres.js, via sqld
